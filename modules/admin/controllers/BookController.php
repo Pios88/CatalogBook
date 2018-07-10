@@ -36,7 +36,7 @@ class BookController extends Controller
      */
     public function actionIndex()
     {
-        $query = Book::find();
+        $query = Book::find()->with('author');
         
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
